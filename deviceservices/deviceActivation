@@ -96,8 +96,7 @@ $cert_sn = '0x02A590E676E2CEED3A99';
 
 # Device certificate request signing
 # for XAMPP
-#exec('c:\xampp\apache\bin\openssl.exe x509 -req -sha1 -in '.$devicefolder.'cert-request.csr -CA '.$certs_path.'iPhoneDeviceCA.crt -CAkey '.$certs_path.'iPhoneDeviceCA_private.key -out '.$devicefolder.'serverCASigned.crt -days '.
-#		$days.' -extfile '.$certs_path.'extensions_device.cnf -extensions usr_cert -set_serial '.$cert_sn.' -passin pass:'.$certs_pass);
+
 # for OpenServer
 exec('openssl x509 -req -sha1 -in '.$devicefolder.'cert-request.csr -CA '.$certs_path.'iPhoneDeviceCA.crt -CAkey '.$certs_path.'iPhoneDeviceCA_private.key -out '.$devicefolder.'serverCASigned.crt -days '.
 		$days.' -extfile '.$certs_path.'extensions_device.cnf -extensions usr_cert -set_serial '.$cert_sn.' -passin pass:'.$certs_pass);
